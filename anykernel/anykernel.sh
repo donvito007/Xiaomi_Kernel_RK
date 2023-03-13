@@ -1,10 +1,10 @@
-	1	# AnyKernel3 Ramdisk Mod Script
+# AnyKernel3 Ramdisk Mod Script
 # osm0sis @ xda-developers
 
 ## AnyKernel setup
 # begin properties
 properties() { '
-kernel.string=InfiniR Kernel by raystef66
+kernel.string=REAL-KING KERNEL by ROHAIL(@Rohail33)--Telegram
 do.devicecheck=1
 do.modules=0
 do.systemless=1
@@ -46,4 +46,17 @@ fi;
 
 write_boot;
 ## end install
+## vendor_boot shell variables
+block=/dev/block/bootdevice/by-name/vendor_boot;
+is_slot_device=auto;
+ramdisk_compression=auto;
+patch_vbmeta_flag=auto;
 
+# reset for vendor_boot patching
+reset_ak;
+
+# vendor_boot install
+dump_boot;
+
+write_boot;
+## end vendor_boot install
